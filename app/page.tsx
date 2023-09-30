@@ -1,10 +1,10 @@
-/* Components */
-import { Counter } from './components/Counter/Counter'
+import Slider from '@mui/material/Slider'
 
-export default function IndexPage() {
-  return <Counter />
-}
-
-export const metadata = {
-  title: 'Redux Toolkit',
+export default function Page() {
+  return (
+    <div>
+      <Slider defaultValue={30} />
+      <Slider defaultValue={30} className="text-teal-600" />
+    </div>
+  )
 }
