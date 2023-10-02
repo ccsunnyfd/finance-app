@@ -13,18 +13,26 @@
   }
   h3 {
     font-family: 'Inter, sans-serif';
-    @apply text-grey-200 text-[20px] font-extrabold;
+    @apply text-[20px] font-extrabold text-grey-200;
   }
   h4 {
     font-family: 'Inter, sans-serif';
-    @apply text-grey-300 text-[14px] font-semibold;
+    @apply text-[14px] font-semibold text-grey-300;
   }
   h5 {
     font-family: 'Inter, sans-serif';
-    @apply text-grey-500 text-[12px] font-normal;
+    @apply text-[12px] font-normal text-grey-500;
   }
   h6 {
     font-family: 'Inter, sans-serif';
-    @apply text-grey-700 text-[10px];
+    @apply text-[10px] text-grey-700;
+  }
+}
+
+@layer utilities {
+  .flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 }
