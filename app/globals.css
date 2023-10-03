@@ -29,6 +29,12 @@
   }
 }
 
+@layer components {
+  .dashboard-box {
+    @apply rounded-2xl bg-background-light shadow-[0.15rem_0.2rem_0.15rem_0.1rem_rgba(0,0,0,0.8)];
+  }
+}
+
 @layer utilities {
   .flex-between {
     display: flex;

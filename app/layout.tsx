@@ -22,8 +22,8 @@ export default function RootLayout({
           <main className="w-screen bg-[#1f2026]">
             <div className="w-full px-8 pb-16 pt-4">
               <Navbar />
+              {children}
             </div>
-            {children}
           </main>
         </body>
       </html>
