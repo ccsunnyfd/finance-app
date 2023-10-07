@@ -1,7 +1,6 @@
 //@ts-ignore
 import clientPromise from '../../../lib/mongodb'
 import kpi from '../../kpi/models/kpi.js'
-import { kpis } from '../../kpi/data/data.js'
 import { NextRequest, NextResponse } from 'next/server.js';
 
 export async function GET(req: NextRequest, res: NextResponse) {
@@ -9,7 +8,7 @@ export async function GET(req: NextRequest, res: NextResponse) {
         /* ADD DATA ONE TIME ONLY OR AS NEEDED */
         //@ts-ignore
         await clientPromise
-        await kpi.insertMany(kpis);
+        // await kpi.insertMany(kpis);
         // Product.insertMany(products);
         // Transaction.insertMany(transactions);
         const kpiRes = await kpi.find()
@@ -19,7 +18,7 @@ export async function GET(req: NextRequest, res: NextResponse) {
         return NextResponse.json({
             message: error,
         }, {
-            status: 500,
+            status: 404,
         })
     }
 }
