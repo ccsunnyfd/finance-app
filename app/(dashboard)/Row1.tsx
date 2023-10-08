@@ -9,13 +9,13 @@ const Row1 = async () => {
 
   return (
     <Suspense fallback={<div>Loading...</div>}>
-      <div className="grid-area-a dashboard-box max-h-[400px] overflow-hidden text-purple-500">
+      <div className="grid-area-a dashboard-box max-h-[400px] overflow-hidden">
         <RevenueExpenses data={data} />
       </div>
-      <div className="grid-area-b dashboard-box max-h-[400px] overflow-hidden text-purple-500">
+      <div className="grid-area-b dashboard-box max-h-[400px] overflow-hidden">
         <Revenue data={data} />
       </div>
-      <div className="grid-area-c dashboard-box max-h-[300px] overflow-hidden text-purple-500">
+      <div className="grid-area-c dashboard-box max-h-[300px] overflow-hidden">
         <RevenueProfit data={data} />
       </div>
     </Suspense>

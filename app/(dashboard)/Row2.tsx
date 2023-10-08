@@ -1,12 +1,27 @@
-import React from 'react'
+import { Suspense } from 'react'
+import { getKpis, getProducts } from './request'
+import OperationalExpenses from './OperationalExpenses'
+import ProductExpense from './ProductExpense'
+import CampaignsAndTargets from './CampaignsAndTargets'
 
-const Row2 = () => {
+const Row2 = async () => {
+  const [operationalData, productData] = await Promise.all([
+    getKpis(),
+    getProducts(),
+  ])
+
   return (
-    <>
-      <div className="grid-area-d dashboard-box text-purple-500">d</div>
-      <div className="grid-area-e dashboard-box text-purple-500">e</div>
-      <div className="grid-area-f dashboard-box text-purple-500">f</div>
-    </>
+    <Suspense fallback={<div>Loading...</div>}>
+      <div className="grid-area-d dashboard-box max-h-[300px] overflow-hidden">
+        <OperationalExpenses data={operationalData} />
+      </div>
+      <div className="grid-area-e dashboard-box max-h-[200px] overflow-hidden">
+        <CampaignsAndTargets />
+      </div>
+      <div className="grid-area-f dashboard-box max-h-[300px] overflow-hidden">
+        <ProductExpense data={productData} />
+      </div>
+    </Suspense>
   )
 }
 
