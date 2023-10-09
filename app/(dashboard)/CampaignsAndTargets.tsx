@@ -1,6 +1,6 @@
 'use client'
 
-import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts'
+import { PieChart, Pie, Cell } from 'recharts'
 import BoxHeader from './components/BoxHeader'
 
 const pieData = [
@@ -15,31 +15,29 @@ const CampaignsAndTargets = () => {
     <div className="h-full w-full">
       <BoxHeader title="Campaigns and Targets" sideText="+4%" />
       <div className="flex-between mt-1 h-full w-full gap-6 pb-16 pr-4">
-        <ResponsiveContainer>
-          <PieChart
-            width={110}
-            height={100}
-            margin={{
-              top: 0,
-              right: -10,
-              left: 10,
-              bottom: 0,
-            }}
+        <PieChart
+          width={110}
+          height={100}
+          margin={{
+            top: 0,
+            right: -10,
+            left: 10,
+            bottom: 0,
+          }}
+        >
+          <Pie
+            stroke="none"
+            data={pieData}
+            innerRadius={18}
+            outerRadius={38}
+            paddingAngle={2}
+            dataKey="value"
           >
-            <Pie
-              stroke="none"
-              data={pieData}
-              innerRadius={18}
-              outerRadius={38}
-              paddingAngle={2}
-              dataKey="value"
-            >
-              {pieData.map((_, index) => (
-                <Cell key={`cell-${index}`} fill={pieColors[index]} />
-              ))}
-            </Pie>
-          </PieChart>
-        </ResponsiveContainer>
+            {pieData.map((_, index) => (
+              <Cell key={`cell-${index}`} fill={pieColors[index]} />
+            ))}
+          </Pie>
+        </PieChart>
         <div className="-ml-[0.7rem] basis-2/5 text-center">
           <h5>Target Sales</h5>
           <h3 className="my-[0.3rem] text-primary-300">83</h3>

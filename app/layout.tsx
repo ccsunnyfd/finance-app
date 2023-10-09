@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.className}`}>
       <body>
-        <main className="h-screen w-screen bg-[#1f2026]">
+        <main className="w-screen bg-[#1f2026]">
           <div className="w-full px-8 pb-16 pt-4">
             <Navbar />
             {children}
