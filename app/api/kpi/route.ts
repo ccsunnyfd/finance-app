@@ -8,7 +8,7 @@ export async function GET(req: NextRequest, res: NextResponse) {
         //@ts-ignore
         await clientPromise
         const kpiRes = await kpi.find()
-        return Response.json(kpiRes)
+        return NextResponse.json(kpiRes)
     } catch (error) {
         console.log(error)
         return NextResponse.json({

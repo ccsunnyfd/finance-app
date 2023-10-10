@@ -9,7 +9,7 @@ export async function GET(req: NextRequest, res: NextResponse) {
         //@ts-ignore
         await clientPromise
         const productRes = await product.find()
-        return Response.json(productRes)
+        return NextResponse.json(productRes)
     } catch (error) {
         console.log(error)
         return NextResponse.json({

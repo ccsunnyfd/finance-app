@@ -8,7 +8,7 @@ export async function GET(req: NextRequest, res: NextResponse) {
         //@ts-ignore
         await clientPromise
         const transactionRes = await transaction.find()
-        return Response.json(transactionRes)
+        return NextResponse.json(transactionRes)
     } catch (error) {
         console.log(error)
         return NextResponse.json({
