@@ -1,6 +1,5 @@
+//@ts-ignore
 import mongoose from 'mongoose'
-import kpi from '../app/kpi/models/kpi'
-import { kpis } from '../app/kpi/data/data'
 
 const uri = process.env.MONGODB_URI
 
